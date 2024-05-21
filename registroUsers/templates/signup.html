@@ -6,15 +6,15 @@
     <h4>Formulario de Registro</h4>
     {% csrf_token %}
     <form  method="POST">
-    <input class="controls" type="text" name="first_name" id="nombres"  autocomplete="off" required placeholder="Ingrese su nombre completo" pattern="A-Za-za">
-    <input class="controls" type="text" name="last_name" id="apellidos"  autocomplete="off" required placeholder="Ingrese sus nombre apellidos" pattern="A-Za-za">
+    <input class="controls" type="text" name="first_name" id="nombres"  autocomplete="off" required placeholder="Ingrese su nombre completo" pattern="[A-Za-zàáâäãéèêëíìîïóòôöúùûüñÑ]+">
+    <input class="controls" type="text" name="last_name" id="apellidos"  autocomplete="off" required placeholder="Ingrese sus nombre apellidos" pattern="[A-Za-zàáâäãéèêëíìîïóòôöúùûüñÑ]+">
     <input class="controls" type="email" name="email" id="correos"   autocomplete="off" required placeholder="Ingrese su correo">
     <input class="controls" type="text" name="username" id="usuarios"  autocomplete="off"  required placeholder="Ingrese su usuario">
     <input class="controls" type="password" name="password1"   autocomplete="off" id="contraseña1"required placeholder="Ingrese su contraseña">
     <input class="controls" type="password" name="password2"   autocomplete="off"id="contraseña2"required placeholder="Ingrese su contraseña nuevamente">
     <p>Estoy de acuerdo con <a href="#">Terminos y condiciones</a></p> <input class="bottons" type="checkbox" required>
     <input class="bottons" type="submit" value="Registrar">
-    <p><a href="/login/">Ya tengo cuenta</a></p>
+    <p><a href="{% url 'login'%}">Ya tengo cuenta</a></p>
     </form>
 </section> 
 {% endblock %}

@@ -16,15 +16,15 @@
         <br>
         <br>
         <nav>
-            <ul>
+            <ul> 
                 <li></li>
                 <li></li>
                 <div  class="menu">
                 {% if user.is_authenticated %}
-                <li><a href="logout/" class="cta">Logout</a></li>
+                <li><a href="{% url 'logout' %}" class="cta">Logout</a></li>
                 {% else %}
-                <li><a href="signup/" class="cta">Signup</a></li>
-                <li><a href="login/" class="cta">Login</a></li>
+                <li><a href="{% url 'signup' %}" class="cta">Signup</a></li>
+                <li><a href="{% url 'login' %}" class="cta">Login</a></li>
                 {% endif %}
                 </div>
             </ul>
