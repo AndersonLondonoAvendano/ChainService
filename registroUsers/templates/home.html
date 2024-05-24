@@ -15,8 +15,12 @@
 
             <nav class="navbar">
                 <a href="{% url 'home' %}">Inicio</a>
-                <a href="{% url 'signup' %}" class="">Registrarse</a>
+                {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}" class="">Cerrar sesión</a>
+                {% else %}
                 <a href="{% url 'login' %}" class="">Iniciar sesión</a>
+                <a href="{% url 'signup' %}" class="">Registrarse</a>
+                {% endif %}
             </nav>
         </header>
 
