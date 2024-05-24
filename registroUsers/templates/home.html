@@ -5,95 +5,21 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ChainReserve</title>
-        <link rel="stylesheet" type="text/css" href="{% static 'css/styleRegistro.css' %}">
-        <!-- <link rel="stylesheet" type="text/css" href="static\css/styleRegistro.css"> -->
+        <link rel="stylesheet" type="text/css" href="../static/css/styleRegistro.css">
     </head>
     <body>
-    <header>
-        <!-- poner el logo -->
-        <img src="static\css/logo.png" alt="Logo" class="logo">
-        <a href="/" style="color: #fff;"><h1 style="text-align: center;">ChainReserve</h1></a>
-        <br>
-        <br>
-        <nav>
-            <ul> 
-                <li></li>
-                <li></li>
-                <div  class="menu">
-                {% if user.is_authenticated %}
-                <li><a href="{% url 'logout' %}" class="cta">Logout</a></li>
-                {% else %}
-                <li><a href="{% url 'signup' %}" class="cta">Signup</a></li>
-                <li><a href="{% url 'login' %}" class="cta">Login</a></li>
-                {% endif %}
-                </div>
-            </ul>
-        </nav>
-    </header>
+        <header class="header">
+            <a  href="{% url 'home' %}" class="logo">
+                <img src="../static/css/logo.png" alt="Logo" class="logo"> 
+            </a>
 
-    <style>
-        /* Estilos generales */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
+            <nav class="navbar">
+                <a href="{% url 'home' %}">Inicio</a>
+                <a href="{% url 'signup' %}" class="">Registrarse</a>
+                <a href="{% url 'login' %}" class="">Iniciar sesión</a>
+            </nav>
+        </header>
 
-.logo{
-    margin-top: 10px;
-    width: 80px;
-    height: 80px;
-    border-radius: 80px;
-}
-
-
-header {
-    background-color:#24303c;
-    color: #fff;
-    padding: 20px;
-}
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-
-.cta {
-    width: 100%;
-    background-color: #1f53c5;
-    border: none;
-    padding: 12px;
-    color: #fff;
-    margin: 16px 0;
-    font-size: 16px;
-    text-align: left;
-    text-decoration: none;
-    margin-top: 0%;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-}
-.Bienvenida{
-    text-align: center;
-    margin-top: 140px;
-    color:#fff;
-}
-
-    </style>
     {% block content %}
     <section class="Bienvenida">
         {% if user.is_authenticated %}
@@ -104,7 +30,7 @@ footer {
         <h2>Bienvenid@ a ChainReserve</h2>
         <p>Descubre e innova en cada una de tus reservas</p>
         <br>
-        <a href="signup/">¡Registrate ahora mismo!</a>
+        <a class="registrer" href="signup/">¡Registrate ahora mismo!</a>
         {% endif %}
         
     </section>
