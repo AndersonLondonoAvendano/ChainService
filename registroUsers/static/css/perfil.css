@@ -1,0 +1,97 @@
+.card-img-top {
+    height: 180px;
+    object-fit: cover;
+}
+.posts {
+    margin-top: 30px;
+}
+.post {
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.post h5 {
+    margin-bottom: 15px;
+}
+h2{
+    color: #ddd;
+}
+.form-registro p {
+height: 40px;
+text-align: center;
+font-size: 18px;
+line-height: 40px;
+}
+
+
+.form-registro {
+width: 1100px;
+background: #24303c;
+padding: 30px;
+margin: auto;
+margin-top: 150px;
+border-radius: 5px;
+font-family: 'calibri';
+color: white;
+box-shadow: 7px 13px 37px #000;
+flex-wrap: wrap;
+text-align: center;
+}
+
+.form-registro p {
+height: 40px;
+text-align: center;
+font-size: 18px;
+line-height: 40px;
+}
+
+.form-registro a {
+color: white;
+text-decoration: none;
+}
+
+.form-registro a:hover {
+color: white;
+text-decoration: underline;
+}
+
+.form-registro .bottons {
+background: #1f53c5;
+border: none;
+padding: 12px;
+color: white;
+margin: 16px 0;
+font-size: 16px;
+text-align: center;
+border-radius: 10px;
+}
+.btn {
+width: 100%;
+background: #1f53c5;
+border: none;
+padding: 12px;
+color: white;
+margin: 16px 0;
+font-size: 16px;
+text-align: center;
+}
+
+.cta {
+width: 100%;
+background-color: #1f53c5;
+border: none;
+padding: 12px;
+color: #fff;
+margin: 16px 0;
+font-size: 16px;
+text-align: left;
+text-decoration: none;
+margin-top: 0%;
+}
+
+.registro{
+text-decoration: none;
+color: #fff;
+}

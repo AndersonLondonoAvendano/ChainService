@@ -4,7 +4,7 @@ from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from django.contrib.auth.models import User  # esta es la tabla de la base de datos proporcionada por django
 from django.contrib.auth import login,logout,authenticate # metodos utilizados para el crud de los usuarios
 from django.db import IntegrityError 
-
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -42,7 +42,7 @@ def signup(request):
 
 
 # funcion utilizada para desloguear un usuario
-
+@login_required
 def signout(request):
     logout(request)
     return redirect('/')

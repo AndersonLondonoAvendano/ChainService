@@ -1,0 +1,57 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reservar.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <div class="hotel-container">
+                    <img src="{{ publicacion.propiedad.url }}" alt="Imagen del Hotel" class="hotel-image">
+                    <ul class="hotel-details">
+                        <li>{{ publicacion.titulo }}</li>
+                        <li>{{ publicacion.ubicacion }}</li>
+                        <li>{{ publicacion.descripcion }}</li>
+                        <li>{{ publicacion.precio }}</li>
+                    </ul>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label for="ciudad" class="form-label">Ciudad</label>
+                        <input type="text" class="form-control" id="ciudad" placeholder="Ingresa tu ciudad">
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaLlegada" class="form-label">Fecha de Llegada</label>
+                        <input type="date" class="form-control" id="fechaLlegada">
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaSalida" class="form-label">Fecha de Salida</label>
+                        <input type="date" class="form-control" id="fechaSalida">
+                    </div>
+                    <div class="form-group">
+                        <label for="huespedes" class="form-label">Número de Huéspedes</label>
+                        <input type="number" class="form-control" id="huespedes" min="1" value="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="tipoHabitacion" class="form-label">Tipo de Habitación</label>
+                        <select class="form-control" id="tipoHabitacion">
+                            <option value="individual">Individual</option>
+                            <option value="doble">Doble</option>
+                            <option value="familiar">Familiar</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn">Siguiente paso</button>
+                </form>
+            </div>
+{% endblock %}

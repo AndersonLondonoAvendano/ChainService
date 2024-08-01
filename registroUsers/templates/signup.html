@@ -6,8 +6,8 @@
     <h4>Formulario de Registro</h4>
     {% csrf_token %}
     <form  method="POST">
-        <input class="controls" type="text" name="first_name" id="nombres"  autocomplete="off" required placeholder="Ingrese su nombre" title="Nombre" pattern="[A-Za-zàáâäãéèêëíìîïóòôöúùûüñÑ]+">
-        <input class="controls" type="text" name="last_name" id="apellidos"  autocomplete="off" required placeholder="Ingrese susapellidos" title="Apellidos" pattern="[A-Za-zàáâäãéèêëíìîïóòôöúùûüñÑ]+">
+        <input class="controls" type="text" name="first_name" id="nombres"  autocomplete="off" required placeholder="Ingrese su nombre completo" title="Nombre" pattern="[A-Za-zàáâäãéèêëíìîïóòôöúùûüñÑ]+">
+        <input class="controls" type="text" name="last_name" id="apellidos"  autocomplete="off" required placeholder="Ingrese sus apellidos" title="Apellidos" pattern="[A-Za-zàáâäãéèêëíìîïóòôöúùûüñÑ]+">
         <input class="controls" type="email" name="email" id="correos"   autocomplete="off" required placeholder="Ingrese su correo" title="Email">
         <input class="controls" type="text" name="username" id="usuarios"  autocomplete="off"  required placeholder="Ingrese su usuario" title="Usuario">
         <input class="controls" type="password" name="password1"   autocomplete="off" id="contraseña1"required placeholder="Ingrese su contraseña" title="Contraseña">

@@ -1,0 +1,21 @@
+{% extends 'home.html'%}
+
+{% block content %}
+{% csrf_token %}
+<form class="form-register" method="POST" enctype="multipart/form-data">
+    <h4>Hacer publicación</h4>
+    <br>
+    
+{% for campo in formulario %}
+    <input class="controls" 
+    type="{{ campo.field.widget.input_type }}" 
+    name="{{ campo.name }}"   
+    autocomplete="off" 
+    id="precio"
+    required 
+    placeholder="{{ campo.label }}">
+    {% endfor %}
+    <input class="bottons" type="submit" value="Publicar">
+</form>
+
+{% endblock %}

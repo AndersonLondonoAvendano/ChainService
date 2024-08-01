@@ -1,0 +1,64 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/perfil.css' %}">
+</head>
+<body>
+<div class="form-registro">
+    <p>-----------------------------------------------------------------------------------------------------</p>
+    <div class="data">
+
+    <h1 class="card-title text-center" style="color: gold;">{{ user }}</h5>
+    <p class="card-text"><strong>Mi Email:</strong> {{ user.email }}</p>
+    <p class="card-text"><strong>Mi ultima sesión:</strong> {{ user.last_login }}</p>
+    <a  type="button" class="bottons" href="{% url 'post' %}">Publicar Inmubele</a>
+    <a  type="button" class="bottons" href="{% url 'reserve' %}">Reservar Inmueble</a>
+
+    </div>
+    <p>-----------------------------------------------------------------------------------------------------</p>
+    <br>
+    <h2 style="text-align: left;">Publicaciones Recientes:</h2>
+</div>
+<br>
+<main class="container">
+
+    <div class="row">
+        {% for poste in post %}
+        <div class="col-md-4 mb-4"> 
+        <div class="card">
+            <img src="{{ poste.propiedad.url }}" class="card-img-top" alt="Image">
+            <div class="card-body">
+            
+            <h5 class="card-title text-center">{{ poste.titulo }}</h5>
+            <p class="card-text"><strong>Ubicación:</strong> {{ poste.ubicacion }}</p>
+            <p class="card-text"><strong>Descripción:</strong> {{ poste.descripcion }}</p>
+            <p class="card-text"><strong>Precio:</strong> ${{ poste.precio }}</p>
+            <p class="card-text"><strong>Fecha de publicación:</strong> {{ poste.created }}</p>
+            <p class="card-text"><strong>Publicado por:</strong> {{ poste.user }}</p>
+            <a  type="button" class="registrer" href="{{ poste.id }}"><button style="background-color: rgb(255, 87, 87);border-radius: 10px;">Eliminar publicacion</button></a>
+            <a  type="button" class="registrer" href="editar/{{poste.id}}"><button style="background-color: rgb(30, 175, 201);border-radius: 10px;">Editar publicación</button></a>
+            
+            </div>
+        </div>
+        </div>
+        {% endfor %}
+    </div>
+    </main>
+
+
+    </ul>
+</div>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+{% endblock %}

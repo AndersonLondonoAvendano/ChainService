@@ -1,0 +1,19 @@
+{% extends 'home.html' %}
+{% block content %}
+
+{% csrf_token %}
+<form class="form-register" method="POST" enctype="multipart/form-data">
+    <h4>Editar publicación</h4>
+    <img  src="{{ publicacion.propiedad.url }}" class="card-img-top" alt="Image">
+{% for campo in form %}
+    <input class="controls" 
+    type="{{ campo.field.widget.input_type.url }}" 
+    name="{{ campo.name }}"   
+    autocomplete="off" 
+    id="precio"
+    required 
+    placeholder="{{ campo.label }}" value="{{ campo.value }}">
+    {% endfor %}
+    <input class="bottons" type="submit" value="Guardar cambios">
+</form>
+{% endblock%}

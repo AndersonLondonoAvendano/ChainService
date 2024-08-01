@@ -1,0 +1,37 @@
+{% extends 'home.html'%}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/reservar.css' %}">
+<h1>Inmuebles Disponibles</h1>
+
+
+<main class="container">
+  <div class="row">
+    {% for poste in post %}
+    <div class="col-md-4 mb-4"> 
+      <a class="registro" href="{{ poste.id }}">
+      <div class="card">
+        <img src="{{ poste.propiedad.url }}" class="card-img-top" alt="Image">
+        <div class="card-body">
+          <h5 class="card-title text-center">{{ poste.titulo }}</h5>
+          <p class="card-text"><strong>Ubicación:</strong> {{ poste.ubicacion }}</p>
+          <p class="card-text"><strong>Descripción:</strong> {{ poste.descripcion }}</p>
+          <p class="card-text"><strong>Precio:</strong> ${{ poste.precio }}</p>
+          <p class="card-text"><strong>Fecha de publicación:</strong> {{ poste.created }}</p>
+          <p class="card-text"><strong>Publicado por:</strong> {{ poste.user }}</p>
+          <a href="{{ poste.id }}"><input class="bottons" type="submit" value="Reservar"></a>
+        </div>
+      </div>
+    </div>
+    </a>
+    {% endfor %}
+  </div>
+</main>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+{% endblock %}

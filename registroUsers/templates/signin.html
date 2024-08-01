@@ -4,6 +4,7 @@
     
     <b style="color: red;">{{error}}</b>
     <h4>Iniciar sesión</h4>
+    {% csrf_token %}
     <form method="POST">
     <input class="controls" type="text" name="username" id="usuarios"  autocomplete="off"   required placeholder="Ingrese su usuario" title="Usuario">
     <input class="controls" type="password" name="password" id="contraseñas" autocomplete="off" required placeholder="Ingrese su contraseña" title="Contraseña">
